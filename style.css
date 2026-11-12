@@ -1,0 +1,135 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #dbeafe, #e2e8f0);
+    font-family: 'Inter', sans-serif;
+}
+
+.calculator {
+    width: 340px;
+    padding: 22px;
+    background: #171923;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 32px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+}
+
+.display {
+    height: 150px;
+    padding: 15px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    overflow: hidden;
+    color: white;
+}
+
+.previous-operand {
+    min-height: 30px;
+    font-size: 18px;
+    color: #9298a9;
+    margin-bottom: 8px;
+}
+
+.current-operand {
+    max-width: 100%;
+    font-size: 46px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.current-operand::-webkit-scrollbar {
+    display: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+button {
+    height: 62px;
+    border: none;
+    border-radius: 18px;
+    background: #292d3a;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: #3b4152;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.94);
+}
+
+.function {
+    background: #454b5c;
+    color: #dce3f0;
+}
+
+.function:hover {
+    background: #596176;
+}
+
+.operator {
+    background: #ff9500;
+    color: white;
+    font-size: 25px;
+}
+
+.operator:hover {
+    background: #ffad33;
+}
+
+.operator.active {
+    background: #ffffff;
+    color: #ff9500;
+}
+
+.equals {
+    background: #2563eb;
+    color: white;
+}
+
+.equals:hover {
+    background: #3b82f6;
+}
+
+.zero {
+    grid-column: span 2;
+    border-radius: 18px;
+    text-align: left;
+    padding-left: 25px;
+}
+
+@media (max-width: 400px) {
+    .calculator {
+        width: 300px;
+        padding: 17px;
+    }
+
+    button {
+        height: 56px;
+    }
+}
